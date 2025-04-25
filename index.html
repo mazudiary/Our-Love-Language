@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Love Languages</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <button id="music-toggle" class="music-toggle" title="Toggle Music">
+      <span class="play-icon">🎶</span>
+      <span class="pause-icon" style="display: none">⏸️</span>
+    </button>
+
+    <audio id="background-music" loop>
+      <source src="./assets/bensound-love.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <h1>Our Love Languages</h1>
+    <div class="quote">“This is how I’ll love you—forever.”</div>
+
+    <div class="chart-container">
+      <canvas id="lovePieChart"></canvas>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <span style="background: #f8b6c1"></span>
+        <strong>Physical Touch</strong> – Holding hands, forehead kisses, warm
+        hugs, cuddling under the stars.
+      </div>
+      <div class="legend-item">
+        <span style="background: #f48ca6"></span>
+        <strong>Acts of Service</strong> – Cooking dinner with love, filling
+        your gas tank, doing the dishes without being asked, bringing you your
+        favorite snack.
+      </div>
+      <div class="legend-item">
+        <span style="background: #f27292"></span>
+        <strong>Receiving Gifts</strong> – Cute surprises, spontaneous flowers,
+        love notes, unexpected gifts for no reason at all.
+      </div>
+      <div class="legend-item">
+        <span style="background: #e35d75"></span>
+        <strong>Quality Time</strong> – Thoughtful date nights, long road trips,
+        unplugged weekends together, deep conversations.
+      </div>
+      <div class="legend-item">
+        <span style="background: #c94a64"></span>
+        <strong>Words of Affirmation</strong> – Handwritten notes, daily “I LOVE
+        YOU”, heartfelt compliments, and softly reminding: “Believe in Allah,
+        always.”
+      </div>
+    </div>
+
+    <div id="notification" class="notification">
+      <p>Click on a picture to discover a beautiful moment of love 💖</p>
+    </div>
+
+    <!-- Physical Touch -->
+    <div class="gallery-section">
+      <div class="section-title">Physical Touch</div>
+      <div class="gallery">
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/holding_hands.jpg" alt="Holding Hands" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Holding Hands</h3>
+              <p>A simple gesture that speaks volumes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/forehead_kiss.png" alt="Forehead Kisses" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Forehead Kisses</h3>
+              <p>A tender touch that shows deep affection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/warm_hugs.png" alt="Warm Hugs" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Warm Hugs</h3>
+              <p>Embracing each other to feel safe and loved.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/cuddling.png" alt="Cuddling" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Cuddling</h3>
+              <p>Cozy moments under the stars.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acts of Service -->
+    <div class="gallery-section">
+      <div class="section-title">Acts of Service</div>
+      <div class="gallery">
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/cooking_dinner.png" alt="Cooking Dinner" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Cooking Dinner</h3>
+              <p>Preparing a meal with love and care.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/filling_gas_tank.png" alt="Filling Gas Tank" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Filling Gas Tank</h3>
+              <p>Taking care of small tasks to ease your day.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/doing_dishes.png" alt="Doing Dishes" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Doing Dishes</h3>
+              <p>Helping out without being asked.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/bringing_snacks.png" alt="Bringing Snack" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Bringing Snack</h3>
+              <p>Surprising you with your favorite treat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Receiving Gifts -->
+    <div class="gallery-section">
+      <div class="section-title">Receiving Gifts</div>
+      <div class="gallery">
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/cute_surprises.png" alt="Cute Surprises" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Cute Surprises</h3>
+              <p>Unexpected gifts that bring joy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/spontaneous_flowers.png"
+                alt="Spontaneous Flowers"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Spontaneous Flowers</h3>
+              <p>A beautiful way to show you care.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/love_notes.png" alt="Love Notes" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Love Notes</h3>
+              <p>Written words that warm the heart.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/unexpected_gifts.png" alt="Unexpected Gifts" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Unexpected Gifts</h3>
+              <p>Thoughtful presents for no reason at all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality Time -->
+    <div class="gallery-section">
+      <div class="section-title">Quality Time</div>
+      <div class="gallery">
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/date_nights.png" alt="Date Nights" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Date Nights</h3>
+              <p>Enjoying special moments together.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/road_trips.png" alt="Road Trips" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Road Trips</h3>
+              <p>Adventures that create memories.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/unplugged_weekends.png"
+                alt="Unplugged Weekends"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Unplugged Weekends</h3>
+              <p>Disconnecting to reconnect with each other.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/deep_conversations.png"
+                alt="Deep Conversations"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Deep Conversations</h3>
+              <p>Sharing thoughts and dreams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Words of Affirmation -->
+    <div class="gallery-section">
+      <div class="section-title">Words of Affirmation</div>
+      <div class="gallery">
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/handwritten_notes.png"
+                alt="Handwritten Notes"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Handwritten Notes</h3>
+              <p>Personal touches that mean a lot.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/daily_affirmations.png"
+                alt="Daily Affirmations"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Daily Affirmations</h3>
+              <p>Reminders of love and support.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img
+                src="./assets/heartfelt_compliments.png"
+                alt="Heartfelt Compliments"
+              />
+            </div>
+            <div class="back photo-desc">
+              <h3>Heartfelt Compliments</h3>
+              <p>Words that uplift and encourage.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cube-container">
+          <div class="photo-cube">
+            <div class="front">
+              <img src="./assets/reminders.png" alt="Reminders" />
+            </div>
+            <div class="back photo-desc">
+              <h3>Reminders</h3>
+              <p>Softly reminding: “Believe in Allah, always.”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
